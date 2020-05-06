@@ -33,12 +33,7 @@ module.exports = function (eleventyConfig) {
     output: 'dist',
     include: ['img/**/*.@(jpg|jpeg|png)'],
   })
-  eleventyConfig.addPlugin(eleventyManifestPlugin, {
-    output: 'dist',
-    name: 'Navillus Demo',
-    short_name: 'Navillus',
-    icon: 'src/assets/favicon.svg'
-  })
+  eleventyConfig.addPlugin(eleventyManifestPlugin)
 
   return {
     dir: {

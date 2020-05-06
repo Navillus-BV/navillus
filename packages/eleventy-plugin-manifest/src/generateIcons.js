@@ -1,4 +1,5 @@
 const fs = require('fs')
+const fsExtra = require('fs-extra')
 const path = require('path')
 const sharp = require('sharp')
 const debug = require('./debug')
@@ -7,7 +8,7 @@ async function ensureExists(dir) {
   try {
     await fs.promises.mkdir(dir)
   } catch (err) {
-    if (err && err.code == 'EEXIST') {
+    if (err && err.code == 'ENOENT') {
       return
     }
     throw err
@@ -29,7 +30,7 @@ module.exports = async function (config) {
     icons.add(icon.src)
 
     const iconDir = path.dirname(iconPath)
-    await ensureExists(iconDir)
+    await fsExtra.ensureDir(iconDir)
 
     debug(`Writing ${iconPath}`)
 

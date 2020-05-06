@@ -10,7 +10,7 @@ const defaultConfig = {
   background_color: '#ffffff',
   theme_color: '#222222',
   display: 'standalone',
-  icon: 'src/assets/img/uploads/favicon.svg',
+  icon: 'assets/favicon.svg',
   icons: [
     {
       src: `icons/icon-48x48.png`,
