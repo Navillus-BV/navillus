@@ -3,6 +3,18 @@
     "version": "1.0.0",
     "main": ".eleventy.js",
     "license": "MIT",
+    "author": {
+        "name": "Tony Sullivan",
+        "email": "tony@navillus.nl",
+        "url": "https://navillus.nl"
+    },
+    "keywords": [
+        "eleventy-plugin",
+        "eleventy",
+        "manifest",
+        "pwa",
+        "favicon"
+    ],
     "scripts": {
         "test": "jest **/*.test.js"
     },
