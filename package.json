@@ -9,5 +9,12 @@
   "private": true,
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "prettier": "^2.0.5"
+  },
+  "scripts": {
+    "lint": "prettier packages -c",
+    "lint:fix": "prettier packages --write"
+  }
 }

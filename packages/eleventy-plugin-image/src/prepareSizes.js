@@ -1,5 +1,13 @@
 const path = require('path')
-const { append, concat, filter, map, pipe, sort, subtract, uniq } = require('ramda')
+const {
+  append,
+  filter,
+  map,
+  pipe,
+  sort,
+  subtract,
+  uniq,
+} = require('ramda')
 
 module.exports = function (config) {
   return async function (data) {
@@ -10,7 +18,7 @@ module.exports = function (config) {
       return src.replace(ext, `-${size}${ext}`)
     }
 
-    const isValidSize = s => s <= original.width
+    const isValidSize = (s) => s <= original.width
 
     const getSizes = pipe(
       append(original.width),
@@ -19,20 +27,15 @@ module.exports = function (config) {
       uniq
     )
 
-    const getSizeData = width => ({
+    const getSizeData = (width) => ({
       src: srcWithSize(reference.src, width),
       output: srcWithSize(reference.output, width),
       width,
     })
 
-    const sizesPipeline = pipe(
-      getSizes,
-      map(getSizeData)
-    )
+    const sizesPipeline = pipe(getSizes, map(getSizeData))
 
-    const sizes = reference.inline
-      ? []
-      : sizesPipeline(config.sizes)
+    const sizes = reference.inline ? [] : sizesPipeline(config.sizes)
 
     return {
       ...data,
