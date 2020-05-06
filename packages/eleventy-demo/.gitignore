@@ -1,0 +1,10 @@
+# build artefacts
+/dist
+
+# secrets
+.env
+
+# macOS related files
+.DS_Store
+.AppleDouble
+.LSOverride

@@ -57,9 +57,11 @@ const defaultConfig = {
 
 let pluginPromise
 
-function plugin(eleventyConfig) {
+function plugin(eleventyConfig, pluginOptions = {}) {
+  const pluginConfig = merge(defaultConfig, pluginOptions)
+
   eleventyConfig.addNunjucksAsyncFilter('manifest', async (value, cb) => {
-    const config = merge(defaultConfig, value)
+    const config = merge(pluginConfig, value)
 
     pluginPromise = pluginPromise || generateIcons(config).then(makeManifest)
 

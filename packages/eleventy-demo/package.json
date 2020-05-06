@@ -1,0 +1,17 @@
+{
+    "name": "@navillus/eleventy-demo",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "clean": "rimraf dist",
+        "build": "yarn clean && eleventy",
+        "start": "yarn clean && eleventy --serve --port=8181"
+    },
+    "devDependencies": {
+        "@11ty/eleventy": "^0.10.0",
+        "@11ty/eleventy-navigation": "^0.1.5",
+        "eleventy-plugin-image": "workspace:",
+        "eleventy-plugin-manifest": "workspace:",
+        "rimraf": "^3.0.2"
+    }
+}
