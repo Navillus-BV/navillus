@@ -1718,6 +1718,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"eleventy-plugin-manifest@workspace:packages/eleventy-plugin-manifest":
+  version: 0.0.0-use.local
+  resolution: "eleventy-plugin-manifest@workspace:packages/eleventy-plugin-manifest"
+  dependencies:
+    debug: ^4.1.1
+    jest: ^25.4.0
+    ramda: ^0.27.0
+    sharp: ^0.25.2
+    sinon: ^9.0.2
+  languageName: unknown
+  linkType: soft
+
 "emoji-regex@npm:^8.0.0":
   version: 8.0.0
   resolution: "emoji-regex@npm:8.0.0"

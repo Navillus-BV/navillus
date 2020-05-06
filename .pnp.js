@@ -25,12 +25,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {
         "name": "eleventy-plugin-image",
         "reference": "workspace:packages/eleventy-plugin-image"
+      },
+      {
+        "name": "eleventy-plugin-manifest",
+        "reference": "workspace:packages/eleventy-plugin-manifest"
       }
     ],
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.vscode\\/pnpify(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
       ["eleventy-plugin-image", ["workspace:packages/eleventy-plugin-image"]],
+      ["eleventy-plugin-manifest", ["workspace:packages/eleventy-plugin-manifest"]],
       ["navillus", ["workspace:."]]
     ],
     "fallbackPool": [
@@ -1984,6 +1989,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["glob", "npm:7.1.6"],
             ["jest", "npm:25.5.4"],
             ["jsdom", "virtual:d6f12f46bae5290f0979501fcd99a54930677cba86988c28c34439252ae17b1b9157ddfbfc3c8b0ccb97717a1d1020413ee8b4c425aed89efca9a080ef225924#npm:16.2.2"],
+            ["ramda", "npm:0.27.0"],
+            ["sharp", "npm:0.25.2"],
+            ["sinon", "npm:9.0.2"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["eleventy-plugin-manifest", [
+        ["workspace:packages/eleventy-plugin-manifest", {
+          "packageLocation": "./packages/eleventy-plugin-manifest/",
+          "packageDependencies": [
+            ["eleventy-plugin-manifest", "workspace:packages/eleventy-plugin-manifest"],
+            ["debug", "virtual:ef2fb28f3185f9ba345cf0214d372bc8e04344320dd80b839f12ab23fbe300f7c2a62784bfffb92cb431640b461f8eb544464aadcc1823ebefc40d17e8ec16c9#npm:4.1.1"],
+            ["jest", "npm:25.5.4"],
             ["ramda", "npm:0.27.0"],
             ["sharp", "npm:0.25.2"],
             ["sinon", "npm:9.0.2"]
