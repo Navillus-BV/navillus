@@ -7,5 +7,7 @@
   "author": "Tony Sullivan <tony@navillus.nl>",
   "license": "MIT",
   "private": true,
-  "workspaces": ["packages/*"]
+  "workspaces": [
+    "packages/*"
+  ]
 }
