@@ -1,0 +1,11 @@
+{
+  "name": "navillus",
+  "version": "1.0.0",
+  "description": "Monorepo for Navillus open-source projects",
+  "main": "index.js",
+  "repository": "git@github.com-navillus:Navillus-BV/navillus.git",
+  "author": "Tony Sullivan <tony@navillus.nl>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["packages/*"]
+}
