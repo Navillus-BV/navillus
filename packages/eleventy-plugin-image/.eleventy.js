@@ -16,7 +16,6 @@ const defaultConfig = {
   compressionLevel: 8, // png quality level
   quality: 70, // jpeg/webp quality level
 
-  inlinedSize: 64, // width of the inlined base64 placeholder image
   sizes: [400, 800, 1200], // array of sizes for srcset in pixels
 
   // WebP options [sharp docs](https://sharp.pixelplumbing.com/en/stable/api-output/#webp)
