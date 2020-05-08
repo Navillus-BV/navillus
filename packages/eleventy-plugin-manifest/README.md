@@ -117,7 +117,7 @@ For example, make a `site.json` file in your `_data` directory
 and provide that to the plugin's `manifest` filter
 
 ```
-{% site.manifest | manifest | safe %}
+{{} site.manifest | manifest | safe }}
 ```
 
 Both options can be used together. In this case, options passed to the `addPlugin` call will override the default plugin config, and data passed to the `manifest` filter will override both the default config and `addPlugin` options.
