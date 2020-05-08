@@ -1,6 +1,6 @@
 {
     "name": "eleventy-plugin-image",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": ".eleventy.js",
     "license": "MIT",
     "author": {
@@ -18,11 +18,13 @@
     },
     "devDependencies": {
         "debug": "^4.1.1",
-        "glob": "^7.1.6",
         "jest": "^25.4.0",
+        "sinon": "^9.0.2"
+    },
+    "dependencies": {
+        "glob": "^7.1.6",
         "jsdom": "^16.2.2",
         "ramda": "^0.27.0",
-        "sharp": "^0.25.2",
-        "sinon": "^9.0.2"
+        "sharp": "^0.25.2"
     }
 }
