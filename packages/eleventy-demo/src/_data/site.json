@@ -1,9 +1,9 @@
 {
-    "title": "Eleventy Demo",
-    "url": "https://navillus-eleventy-demo.netlify.com",
-    "manifest": {
-        "name": "Eleventy Demo",
-        "short_name": "Demo",
-        "icon": "src/assets/img/uploads/favicon.svg"
-    }
+  "title": "Eleventy Demo",
+  "url": "https://navillus-eleventy-demo.netlify.com",
+  "manifest": {
+    "name": "Eleventy Demo",
+    "short_name": "Demo",
+    "icon": "src/assets/img/uploads/favicon.svg"
+  }
 }

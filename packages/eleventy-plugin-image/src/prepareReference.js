@@ -17,7 +17,7 @@ module.exports = function (config) {
       src: imgElem.src,
       height: intOrUndefined(imgElem.dataset.aspectHeight),
       width: intOrUndefined(imgElem.dataset.aspectWidth),
-      inline: 'inline' in imgElem.dataset,
+      inline: original.size < config.inlineBelow,
       fit: imgElem.dataset.aspectFit,
       position: imgElem.dataset.aspectPosition,
       aspectRatio: original.aspectRatio,

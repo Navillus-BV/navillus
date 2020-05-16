@@ -62,4 +62,31 @@ describe('saveReferenceImage', () => {
     expect(mockSharp.toFile.mock.calls.length).toBe(1)
     expect(mockSharp.toFile.mock.calls[0][0]).toEqual(reference.output)
   })
+
+  test('does not call sharp.resize or sharp.toFile if image is inlined', async () => {
+    const config = {
+      input: 'assets',
+      quality: 70,
+      compressionLevel: 8,
+      webpOptions: { quality: 75, lossless: false, force: true },
+    }
+
+    const src = 'img/test.jpg'
+    const original = { src }
+
+    const output = 'img/test_16x9.jpg'
+    const height = 675
+    const width = 900
+    const fit = 'fill'
+    const position = 'centre'
+    const inline = true
+    const reference = { output, height, width, fit, position, inline }
+
+    const result = await saveReferenceImage(config)({ original, reference })
+
+    expect(result).toBeDefined()
+
+    expect(mockSharp.resize.mock.calls.length).toBe(0)
+    expect(mockSharp.toFile.mock.calls.length).toBe(0)
+  })
 })

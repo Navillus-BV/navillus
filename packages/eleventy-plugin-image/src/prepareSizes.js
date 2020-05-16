@@ -1,13 +1,5 @@
 const path = require('path')
-const {
-  append,
-  filter,
-  map,
-  pipe,
-  sort,
-  subtract,
-  uniq,
-} = require('ramda')
+const { append, filter, map, pipe, sort, subtract, uniq } = require('ramda')
 
 module.exports = function (config) {
   return async function (data) {

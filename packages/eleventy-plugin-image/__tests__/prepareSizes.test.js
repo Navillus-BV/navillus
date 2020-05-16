@@ -98,4 +98,27 @@ describe('prepareSizes', () => {
       { src: 'img/test-850.jpg', output: 'img/test_16x9-850.jpg', width: 850 },
     ])
   })
+
+  test("doesn't return any sizes for inlined images", async () => {
+    const sizes = [400, 800, 1200]
+    const config = { sizes }
+
+    const width = 850
+    const original = { width }
+
+    const src = 'img/test.jpg'
+    const output = 'img/test_16x9.jpg'
+    const inline = true
+    const reference = { output, src, inline }
+
+    const { window } = new JSDOM()
+    const imgElem = window.document.createElement('img')
+    imgElem.src = src
+
+    const result = await prepareSizes(config)({ imgElem, original, reference })
+
+    expect(result).toBeDefined()
+    expect(result.sizes).toBeDefined()
+    expect(result.sizes).toEqual([])
+  })
 })

@@ -13,7 +13,9 @@ module.exports = async function (config) {
   const primary = last(manifest.icons)
 
   return `
-    <link rel="shortcut icon" href="${path.join('/', primary.src)}" type="${primary.type}" />
+    <link rel="shortcut icon" href="${path.join('/', primary.src)}" type="${
+    primary.type
+  }" />
     <link rel="manifest" href="/manifest.webmanifest" />
   `
 }

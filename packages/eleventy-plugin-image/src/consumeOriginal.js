@@ -11,7 +11,7 @@ module.exports = function (config) {
     const { imgElem } = data
     const inputSrc = toInputPath(imgElem.src)
 
-    const { height, width } = await sharp(inputSrc).metadata()
+    const { height, width, size } = await sharp(inputSrc).metadata()
 
     return {
       original: {
@@ -19,6 +19,7 @@ module.exports = function (config) {
         aspectRatio: width / height,
         height,
         width,
+        size,
       },
       ...data,
     }

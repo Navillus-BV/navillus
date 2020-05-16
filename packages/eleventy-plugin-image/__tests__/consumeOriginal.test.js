@@ -4,7 +4,7 @@ jest.mock('sharp', () => () => ({
   jpeg: () => ({
     png: () => ({
       webp: () => ({
-        metadata: () => ({ height: 900, width: 1200 }),
+        metadata: () => ({ height: 900, width: 1200, size: 9000 }),
       }),
     }),
   }),
@@ -53,5 +53,16 @@ describe('consumeOriginal', () => {
     expect(result).toBeDefined()
     expect(result.original).toBeDefined()
     expect(result.original.aspectRatio).toBe(1200 / 900)
+  })
+
+  test('returns original.size', async () => {
+    const config = { input: 'assets' }
+    const imgElem = { src: '/img/test.jpg' }
+
+    const result = await consumeOriginal(config)({ imgElem })
+
+    expect(result).toBeDefined()
+    expect(result.original).toBeDefined()
+    expect(result.original.size).toBe(9000)
   })
 })

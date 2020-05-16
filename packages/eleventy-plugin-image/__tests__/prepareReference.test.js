@@ -173,4 +173,67 @@ describe('prepareReference', () => {
     expect(result.reference.width).toBe(original.width)
     expect(result.reference.height).toBe(675)
   })
+
+  test('returns false for reference.inline with images larger than config.inlineBelow', () => {
+    const config = { output: 'dist', inlineBelow: 10000 }
+    const imgElem = {
+      src: '/img/test.jpg',
+      dataset: {},
+    }
+    const original = {
+      src: '/img/test.jpg',
+      height: 900,
+      width: 1200,
+      size: 10001,
+      aspectRatio: 1200 / 900,
+    }
+
+    const result = prepareReference(config)({ imgElem, original })
+
+    expect(result).toBeDefined()
+    expect(result.reference).toBeDefined()
+    expect(result.reference.inline).toBeFalsy()
+  })
+
+  test('returns true for reference.inline with images smaller than config.inlineBelow', () => {
+    const config = { output: 'dist', inlineBelow: 10000 }
+    const imgElem = {
+      src: '/img/test.jpg',
+      dataset: {},
+    }
+    const original = {
+      src: '/img/test.jpg',
+      height: 900,
+      width: 1200,
+      size: 9999,
+      aspectRatio: 1200 / 900,
+    }
+
+    const result = prepareReference(config)({ imgElem, original })
+
+    expect(result).toBeDefined()
+    expect(result.reference).toBeDefined()
+    expect(result.reference.inline).toBeTruthy()
+  })
+
+  test('returns false for reference.inline with images equal to config.inlineBelow', () => {
+    const config = { output: 'dist', inlineBelow: 10000 }
+    const imgElem = {
+      src: '/img/test.jpg',
+      dataset: {},
+    }
+    const original = {
+      src: '/img/test.jpg',
+      height: 900,
+      width: 1200,
+      size: 10000,
+      aspectRatio: 1200 / 900,
+    }
+
+    const result = prepareReference(config)({ imgElem, original })
+
+    expect(result).toBeDefined()
+    expect(result.reference).toBeDefined()
+    expect(result.reference.inline).toBeFalsy()
+  })
 })
