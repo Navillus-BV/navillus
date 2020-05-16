@@ -1,5 +1,11 @@
 const consumeOriginal = require('../src/consumeOriginal')
 
+jest.mock('fs', () => ({
+  stat: () => ({
+    size: 9000
+  })
+}))
+
 jest.mock('sharp', () => () => ({
   jpeg: () => ({
     png: () => ({
