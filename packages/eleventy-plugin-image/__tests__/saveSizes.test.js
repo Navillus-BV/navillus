@@ -23,7 +23,7 @@ describe('saveSizes', () => {
     const size = { output, width }
     const sizes = [size]
 
-    const result = await saveSizes(config)({ reference, sizes })
+    const result = await saveSizes(config)({ reference, sizes, imgElem: {} })
 
     expect(result).toBeDefined()
 
@@ -50,7 +50,7 @@ describe('saveSizes', () => {
     const size = { output, width }
     const sizes = [size]
 
-    const result = await saveSizes(config)({ reference, sizes })
+    const result = await saveSizes(config)({ reference, sizes, imgElem: {} })
 
     expect(result).toBeDefined()
 
@@ -71,7 +71,7 @@ describe('saveSizes', () => {
     }
     const sizes = []
 
-    const result = await saveSizes(config)({ reference, sizes })
+    const result = await saveSizes(config)({ reference, sizes, imgElem: {} })
 
     expect(result).toBeDefined()
 
@@ -96,7 +96,7 @@ describe('saveSizes', () => {
     const size3 = { output: 'img/test/16x9-1600.jpg', width: 1600 }
     const sizes = [size1, size2, size3]
 
-    const result = await saveSizes(config)({ reference, sizes })
+    const result = await saveSizes(config)({ reference, sizes, imgElem: {} })
 
     expect(result).toBeDefined()
 

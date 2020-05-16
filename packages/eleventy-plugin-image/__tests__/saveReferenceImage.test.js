@@ -24,7 +24,7 @@ describe('saveReferenceImage', () => {
     const position = 'centre'
     const reference = { output, height, width, fit, position }
 
-    const result = await saveReferenceImage(config)({ original, reference })
+    const result = await saveReferenceImage(config)({ original, reference, imgElem: {} })
 
     expect(result).toBeDefined()
 
@@ -55,7 +55,7 @@ describe('saveReferenceImage', () => {
     const position = 'centre'
     const reference = { output, height, width, fit, position }
 
-    const result = await saveReferenceImage(config)({ original, reference })
+    const result = await saveReferenceImage(config)({ original, reference, imgElem: {} })
 
     expect(result).toBeDefined()
 
@@ -82,7 +82,7 @@ describe('saveReferenceImage', () => {
     const inline = true
     const reference = { output, height, width, fit, position, inline }
 
-    const result = await saveReferenceImage(config)({ original, reference })
+    const result = await saveReferenceImage(config)({ original, reference, imgElem: {} })
 
     expect(result).toBeDefined()
 
