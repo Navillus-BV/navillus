@@ -1,9 +1,10 @@
 const path = require('path')
 const { append, filter, map, pipe, sort, subtract, uniq } = require('ramda')
+const debug = require('./debug')
 
 module.exports = function (config) {
   return async function (data) {
-    const { reference, original } = data
+    const { imgElem, reference, original } = data
 
     const srcWithSize = (src, size) => {
       const ext = path.extname(src)
@@ -28,6 +29,8 @@ module.exports = function (config) {
     const sizesPipeline = pipe(getSizes, map(getSizeData))
 
     const sizes = reference.inline ? [] : sizesPipeline(config.sizes)
+
+    debug('prepareSizes: %s -> %o', imgElem.src, sizes)
 
     return {
       ...data,

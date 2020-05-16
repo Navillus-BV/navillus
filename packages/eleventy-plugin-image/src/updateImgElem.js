@@ -18,8 +18,10 @@ module.exports = function (config) {
     imgElem.removeAttribute('data-aspect-position')
 
     if (reference.inline) {
+      debug('updateImgElem: inlining %s at %d px', imgElem.src, reference.width)
       imgElem.src = await getBase64(reference.width)
     } else {
+      debug('updateImgElem: %s updated with %d responsive sizes', imgElem.src, sizes.length)
       imgElem.src = reference.src
       imgElem.setAttribute(
         'data-srcset',

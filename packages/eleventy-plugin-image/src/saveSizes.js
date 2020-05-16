@@ -1,3 +1,5 @@
+const debug = require('./debug')
+
 module.exports = function (config) {
   const sharp = require('./sharp')(config)
 
@@ -12,7 +14,9 @@ module.exports = function (config) {
   }
 
   return function (data) {
-    const { reference, sizes } = data
+    const { imgElem, reference, sizes } = data
+
+    debug('saveSizes: %s saving %o', imgElem.src, sizes)
 
     return Promise.all(sizes.map((size) => saveSize({ reference, size }))).then(
       () => data

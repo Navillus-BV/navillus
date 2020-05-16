@@ -1,5 +1,6 @@
 const path = require('path')
 const { defaultTo, pipe } = require('ramda')
+const debug = require('./debug')
 
 module.exports = function (config) {
   return function (data) {
@@ -46,6 +47,8 @@ module.exports = function (config) {
     }
 
     reference.output = path.join(config.output, reference.src)
+
+    debug('prepareReference: %s -> %s, inline: %o', imgElem.src, reference.output, reference.inline)
 
     return {
       ...data,
