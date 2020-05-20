@@ -27,7 +27,7 @@ module.exports = function (config) {
         'data-srcset',
         sizes.map(({ src, width }) => `${src} ${width}w`).join(', ')
       )
-      imgElem.setAttribute('data-src', 'auto')
+      imgElem.setAttribute('data-sizes', 'auto')
       imgElem.setAttribute('srcset', await getBase64(64))
 
       imgElem.classList.add('lazyload')
