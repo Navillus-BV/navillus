@@ -1,4 +1,7 @@
-# eleventy-plugin-manifest
+WARNING:  This is still experimental!  We are using it internally, but haven't completed the test suite yet and the API surface may change.  Use at your own risk!
+
+
+# @navillus/eleventy-plugin-manifest
 
 This [11ty](https://11ty.dev) plugin builds a `manifest.webmanifest` file and supports resizing favicons automatically.
 
@@ -66,13 +69,13 @@ NOTE: This project is a work in progress! I make no promises beyond "it works on
 ### 1. Install the Plugin
 
 ```
-npm i --save-dev eleventy-plugin-manifest
+npm i --save @navillus/eleventy-plugin-manifest
 ```
 
 or
 
 ```
-yarn add -D eleventy-plugin-manifest
+yarn add @navillus/eleventy-plugin-manifest
 ```
 
 ### 2. Add the Plugin to Eleventy Config
@@ -80,7 +83,7 @@ yarn add -D eleventy-plugin-manifest
 ```
 // .eleventy.js
 
-const pluginManifest = require('eleventy-plugin-manifest')
+const pluginManifest = require('@navillus/eleventy-plugin-manifest')
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginManifest)
