@@ -7,10 +7,11 @@
         "build": "yarn clean && eleventy",
         "start": "yarn clean && eleventy --serve --port=8181"
     },
-    "devDependencies": {
+    "dependencies": {
         "@11ty/eleventy": "^0.10.0",
         "@11ty/eleventy-navigation": "^0.1.5",
         "@navillus/eleventy-plugin-image": "workspace:",
+        "@navillus/eleventy-plugin-inline-css": "workspace:",
         "@navillus/eleventy-plugin-manifest": "workspace:",
         "rimraf": "^3.0.2"
     }

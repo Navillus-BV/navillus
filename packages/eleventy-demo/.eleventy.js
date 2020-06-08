@@ -1,5 +1,6 @@
-const eleventyImagePlugin = require('eleventy-plugin-image')
-const eleventyManifestPlugin = require('eleventy-plugin-manifest')
+const eleventyImagePlugin = require('@navillus/eleventy-plugin-image')
+const eleventyInlineCssPlugin = require('@navillus/eleventy-plugin-inline-css')
+const eleventyManifestPlugin = require('@navillus/eleventy-plugin-manifest')
 
 module.exports = function (eleventyConfig) {
   /**
@@ -33,6 +34,7 @@ module.exports = function (eleventyConfig) {
     output: 'dist',
     include: ['img/**/*.@(jpg|jpeg|png)'],
   })
+  eleventyConfig.addPlugin(eleventyInlineCssPlugin, { input: 'src/assets' })
   eleventyConfig.addPlugin(eleventyManifestPlugin)
 
   return {
