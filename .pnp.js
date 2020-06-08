@@ -31,6 +31,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/eleventy-plugin-image"
       },
       {
+        "name": "@navillus/eleventy-plugin-inline-css",
+        "reference": "workspace:packages/eleventy-plugin-inline-css"
+      },
+      {
         "name": "@navillus/eleventy-plugin-manifest",
         "reference": "workspace:packages/eleventy-plugin-manifest"
       }
@@ -40,6 +44,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "fallbackExclusionList": [
       ["@navillus/eleventy-demo", ["workspace:packages/eleventy-demo"]],
       ["@navillus/eleventy-plugin-image", ["workspace:packages/eleventy-plugin-image"]],
+      ["@navillus/eleventy-plugin-inline-css", ["workspace:packages/eleventy-plugin-inline-css"]],
       ["@navillus/eleventy-plugin-manifest", ["workspace:packages/eleventy-plugin-manifest"]],
       ["navillus", ["workspace:."]]
     ],
@@ -758,6 +763,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@11ty/eleventy", "npm:0.10.0"],
             ["@11ty/eleventy-navigation", "virtual:300b36bd26b9dac221fd13cf30c33f3653e7027e13f15dccea73b126fafd6a2c74673856227d9818c8b3a504bc7bf78af87d5abe8305e897758bcf9f4e65354b#npm:0.1.5"],
             ["@navillus/eleventy-plugin-image", "workspace:packages/eleventy-plugin-image"],
+            ["@navillus/eleventy-plugin-inline-css", "workspace:packages/eleventy-plugin-inline-css"],
             ["@navillus/eleventy-plugin-manifest", "workspace:packages/eleventy-plugin-manifest"],
             ["rimraf", "npm:3.0.2"]
           ],
@@ -776,6 +782,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ramda", "npm:0.27.0"],
             ["sharp", "npm:0.25.2"],
             ["sinon", "npm:9.0.2"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@navillus/eleventy-plugin-inline-css", [
+        ["workspace:packages/eleventy-plugin-inline-css", {
+          "packageLocation": "./packages/eleventy-plugin-inline-css/",
+          "packageDependencies": [
+            ["@navillus/eleventy-plugin-inline-css", "workspace:packages/eleventy-plugin-inline-css"],
+            ["clean-css", "npm:4.2.3"],
+            ["debug", "virtual:3b5e69efaa2372701eeacd25836edffb24542c8451116315f985d26186b219fb4485f91e0a94a6978db5d292a078b1c57ceaae51a63ec1c16cb40561723db94c#npm:4.1.1"],
+            ["jsdom", "virtual:fc1dd187b01b3b33655fb7244fe6608b70634cd9872d834bdd0732485d94ab2be8c4de529d1478fd5e6f1ce3a9f9b93b18295017fc6600d4a5b5790a92df7400#npm:16.2.2"],
+            ["purgecss", "npm:2.2.1"],
+            ["ramda", "npm:0.27.0"]
           ],
           "linkType": "SOFT",
         }]
@@ -2379,6 +2399,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["commander", "npm:3.0.2"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:5.1.0", {
+          "packageLocation": "./.yarn/cache/commander-npm-5.1.0-7e939e7832-3.zip/node_modules/commander/",
+          "packageDependencies": [
+            ["commander", "npm:5.1.0"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["component-bind", [
@@ -2557,6 +2584,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["path-key", "npm:3.1.1"],
             ["shebang-command", "npm:2.0.0"],
             ["which", "npm:2.0.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["cssesc", [
+        ["npm:3.0.0", {
+          "packageLocation": "./.yarn/cache/cssesc-npm-3.0.0-15ec56f86f-3.zip/node_modules/cssesc/",
+          "packageDependencies": [
+            ["cssesc", "npm:3.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -4082,6 +4118,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/imurmurhash-npm-0.1.4-610c5068a0-3.zip/node_modules/imurmurhash/",
           "packageDependencies": [
             ["imurmurhash", "npm:0.1.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["indexes-of", [
+        ["npm:1.0.1", {
+          "packageLocation": "./.yarn/cache/indexes-of-npm-1.0.1-5ce8500941-3.zip/node_modules/indexes-of/",
+          "packageDependencies": [
+            ["indexes-of", "npm:1.0.1"]
           ],
           "linkType": "HARD",
         }]
@@ -6753,6 +6798,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["postcss", [
+        ["npm:7.0.28", {
+          "packageLocation": "./.yarn/cache/postcss-npm-7.0.28-dee90e350c-3.zip/node_modules/postcss/",
+          "packageDependencies": [
+            ["postcss", "npm:7.0.28"],
+            ["chalk", "npm:2.4.2"],
+            ["source-map", "npm:0.6.1"],
+            ["supports-color", "npm:6.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["postcss-selector-parser", [
+        ["npm:6.0.2", {
+          "packageLocation": "./.yarn/cache/postcss-selector-parser-npm-6.0.2-591ff5e868-3.zip/node_modules/postcss-selector-parser/",
+          "packageDependencies": [
+            ["postcss-selector-parser", "npm:6.0.2"],
+            ["cssesc", "npm:3.0.0"],
+            ["indexes-of", "npm:1.0.1"],
+            ["uniq", "npm:1.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["prebuild-install", [
         ["npm:5.3.3", {
           "packageLocation": "./.yarn/cache/prebuild-install-npm-5.3.3-db2bb47eb4-3.zip/node_modules/prebuild-install/",
@@ -7056,6 +7125,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/punycode-npm-2.1.1-26eb3e15cf-3.zip/node_modules/punycode/",
           "packageDependencies": [
             ["punycode", "npm:2.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["purgecss", [
+        ["npm:2.2.1", {
+          "packageLocation": "./.yarn/cache/purgecss-npm-2.2.1-3c41c02d23-3.zip/node_modules/purgecss/",
+          "packageDependencies": [
+            ["purgecss", "npm:2.2.1"],
+            ["commander", "npm:5.1.0"],
+            ["glob", "npm:7.1.6"],
+            ["postcss", "npm:7.0.28"],
+            ["postcss-selector-parser", "npm:6.0.2"]
           ],
           "linkType": "HARD",
         }]
@@ -8370,6 +8452,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
+        ["npm:6.1.0", {
+          "packageLocation": "./.yarn/cache/supports-color-npm-6.1.0-7d19cd7f55-3.zip/node_modules/supports-color/",
+          "packageDependencies": [
+            ["supports-color", "npm:6.1.0"],
+            ["has-flag", "npm:3.0.0"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:7.1.0", {
           "packageLocation": "./.yarn/cache/supports-color-npm-7.1.0-df2ba1e338-3.zip/node_modules/supports-color/",
           "packageDependencies": [
@@ -8807,6 +8897,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["get-value", "npm:2.0.6"],
             ["is-extendable", "npm:0.1.1"],
             ["set-value", "npm:2.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["uniq", [
+        ["npm:1.0.1", {
+          "packageLocation": "./.yarn/cache/uniq-npm-1.0.1-5cab2dd0f3-3.zip/node_modules/uniq/",
+          "packageDependencies": [
+            ["uniq", "npm:1.0.1"]
           ],
           "linkType": "HARD",
         }]

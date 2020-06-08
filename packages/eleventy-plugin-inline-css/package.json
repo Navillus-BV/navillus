@@ -1,0 +1,31 @@
+{
+  "name": "@navillus/eleventy-plugin-inline-css",
+  "version": "1.0.0",
+  "main": ".eleventy.js",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "Tony Sullivan",
+    "email": "tony@navillus.nl",
+    "url": "https://navillus.nl"
+  },
+  "keywords": [
+    "eleventy-plugin",
+    "eleventy",
+    "manifest",
+    "pwa",
+    "favicon"
+  ],
+  "scripts": {
+    "test": "jest **/*.test.js"
+  },
+  "dependencies": {
+    "clean-css": "^4.2.3",
+    "debug": "^4.1.1",
+    "jsdom": "^16.2.2",
+    "purgecss": "^2.2.1",
+    "ramda": "^0.27.0"
+  }
+}
