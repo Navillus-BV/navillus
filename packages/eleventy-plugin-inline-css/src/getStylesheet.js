@@ -4,10 +4,10 @@ const debug = require('./debug')
 
 module.exports = function(config) {
   return function(html) {
-    async function loadWithPurge(from) {
+    function loadWithPurge(from) {
       debug('loading %s with PurgeCSS', from)
 
-      const [{ css }] = await new PurgeCSS()
+      return new PurgeCSS()
         .purge({
           ...config.purgeCss,
           content: [{
@@ -16,20 +16,19 @@ module.exports = function(config) {
           }],
           css: [ from ]
         })
-      
-      return css
+        .then(([{ css }]) => css)
     }
 
-    async function loadWithFs(from) {
+    function loadWithFs(from) {
       debug('loading %s without PurgeCSS', from)
       
       return fs.promises.readFile(from, 'utf-8')
     }
     
     return async function({ from, ...rest }) {
-      const css = await config.purgeCss
-        ? loadWithPurge(from)
-        : loadWithFs(from)
+      const css = config.purgeCss
+        ? await loadWithPurge(from)
+        : await loadWithFs(from)
 
       return {
         ...rest,

@@ -1,6 +1,6 @@
 {
   "name": "@navillus/eleventy-plugin-inline-css",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": ".eleventy.js",
   "license": "MIT",
   "publishConfig": {
