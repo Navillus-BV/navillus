@@ -15,7 +15,7 @@ function minifyCss(config) {
 }
 
 module.exports = function(config) {
-  if (config.cleanCss) {
+  if (!config.cleanCss) {
     debug('config.cleanCss is falsy, skipping CleanCSS minification')
   }
 
