@@ -1,9 +1,12 @@
 const fs = require('fs')
 const { PurgeCSS } = require('purgecss')
+const debug = require('./debug')
 
 module.exports = function(config) {
   return function(html) {
     async function loadWithPurge(from) {
+      debug('loading %s with PurgeCSS', from)
+
       const [{ css }] = await new PurgeCSS()
         .purge({
           ...config.purgeCss,
@@ -18,6 +21,8 @@ module.exports = function(config) {
     }
 
     async function loadWithFs(from) {
+      debug('loading %s without PurgeCSS', from)
+      
       return fs.promises.readFile(from, 'utf-8')
     }
     
