@@ -1,8 +1,11 @@
 {
-    "name": "eleventy-plugin-manifest",
-    "version": "1.0.1",
+    "name": "@navillus/eleventy-plugin-manifest",
+    "version": "1.0.2",
     "main": ".eleventy.js",
     "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    },
     "author": {
         "name": "Tony Sullivan",
         "email": "tony@navillus.nl",

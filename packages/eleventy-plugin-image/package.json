@@ -1,8 +1,11 @@
 {
-    "name": "eleventy-plugin-image",
-    "version": "1.0.5",
+    "name": "@navillus/eleventy-plugin-image",
+    "version": "1.0.6",
     "main": ".eleventy.js",
     "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    },
     "author": {
         "name": "Tony Sullivan",
         "email": "tony@navillus.nl",
