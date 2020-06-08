@@ -1,4 +1,7 @@
-# eleventy-plugin-image
+WARNING:  This is still experimental!  We are using it internally, but haven't completed the test suite yet and the API surface may change.  Use at your own risk!
+
+
+# @navillus/eleventy-plugin-image
 
 This [11ty](https://11ty.dev) plugin transforms `<img>` tags in your rendered HTML to responsive images. Drop the large master image into your `assets` directory and let the plugin handle resizing and optimizing download size!
 
@@ -46,13 +49,13 @@ The plugin also supports forcing image aspect ratios via custom `data-` attribut
 ### 1. Install the Plugin
 
 ```
-npm i --save-dev eleventy-plugin-image
+npm i --save @navillus/eleventy-plugin-image
 ```
 
 or
 
 ```
-yarn add -D eleventy-plugin-image
+yarn add @navillus/eleventy-plugin-image
 ```
 
 ### 2. Add the Plugin to Eleventy Config
@@ -60,7 +63,7 @@ yarn add -D eleventy-plugin-image
 ```
 // .eleventy.js
 
-const pluginImage = require('eleventy-plugin-image')
+const pluginImage = require('@navillus/eleventy-plugin-image')
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginImage, {
