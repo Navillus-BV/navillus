@@ -10,8 +10,8 @@
     "devDependencies": {
         "@11ty/eleventy": "^0.10.0",
         "@11ty/eleventy-navigation": "^0.1.5",
-        "eleventy-plugin-image": "workspace:",
-        "eleventy-plugin-manifest": "workspace:",
+        "@navillus/eleventy-plugin-image": "workspace:",
+        "@navillus/eleventy-plugin-manifest": "workspace:",
         "rimraf": "^3.0.2"
     }
 }
