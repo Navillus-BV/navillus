@@ -27,11 +27,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/eleventy-demo"
       },
       {
-        "name": "eleventy-plugin-image",
+        "name": "@navillus/eleventy-plugin-image",
         "reference": "workspace:packages/eleventy-plugin-image"
       },
       {
-        "name": "eleventy-plugin-manifest",
+        "name": "@navillus/eleventy-plugin-manifest",
         "reference": "workspace:packages/eleventy-plugin-manifest"
       }
     ],
@@ -39,8 +39,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "ignorePatternData": "(^(?:\\.vscode\\/pnpify(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
       ["@navillus/eleventy-demo", ["workspace:packages/eleventy-demo"]],
-      ["eleventy-plugin-image", ["workspace:packages/eleventy-plugin-image"]],
-      ["eleventy-plugin-manifest", ["workspace:packages/eleventy-plugin-manifest"]],
+      ["@navillus/eleventy-plugin-image", ["workspace:packages/eleventy-plugin-image"]],
+      ["@navillus/eleventy-plugin-manifest", ["workspace:packages/eleventy-plugin-manifest"]],
       ["navillus", ["workspace:."]]
     ],
     "fallbackPool": [
@@ -757,9 +757,40 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@navillus/eleventy-demo", "workspace:packages/eleventy-demo"],
             ["@11ty/eleventy", "npm:0.10.0"],
             ["@11ty/eleventy-navigation", "virtual:300b36bd26b9dac221fd13cf30c33f3653e7027e13f15dccea73b126fafd6a2c74673856227d9818c8b3a504bc7bf78af87d5abe8305e897758bcf9f4e65354b#npm:0.1.5"],
-            ["eleventy-plugin-image", "workspace:packages/eleventy-plugin-image"],
-            ["eleventy-plugin-manifest", "workspace:packages/eleventy-plugin-manifest"],
+            ["@navillus/eleventy-plugin-image", "workspace:packages/eleventy-plugin-image"],
+            ["@navillus/eleventy-plugin-manifest", "workspace:packages/eleventy-plugin-manifest"],
             ["rimraf", "npm:3.0.2"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@navillus/eleventy-plugin-image", [
+        ["workspace:packages/eleventy-plugin-image", {
+          "packageLocation": "./packages/eleventy-plugin-image/",
+          "packageDependencies": [
+            ["@navillus/eleventy-plugin-image", "workspace:packages/eleventy-plugin-image"],
+            ["debug", "virtual:3b5e69efaa2372701eeacd25836edffb24542c8451116315f985d26186b219fb4485f91e0a94a6978db5d292a078b1c57ceaae51a63ec1c16cb40561723db94c#npm:4.1.1"],
+            ["glob", "npm:7.1.6"],
+            ["jest", "npm:25.5.4"],
+            ["jsdom", "virtual:fc1dd187b01b3b33655fb7244fe6608b70634cd9872d834bdd0732485d94ab2be8c4de529d1478fd5e6f1ce3a9f9b93b18295017fc6600d4a5b5790a92df7400#npm:16.2.2"],
+            ["ramda", "npm:0.27.0"],
+            ["sharp", "npm:0.25.2"],
+            ["sinon", "npm:9.0.2"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@navillus/eleventy-plugin-manifest", [
+        ["workspace:packages/eleventy-plugin-manifest", {
+          "packageLocation": "./packages/eleventy-plugin-manifest/",
+          "packageDependencies": [
+            ["@navillus/eleventy-plugin-manifest", "workspace:packages/eleventy-plugin-manifest"],
+            ["debug", "virtual:3b5e69efaa2372701eeacd25836edffb24542c8451116315f985d26186b219fb4485f91e0a94a6978db5d292a078b1c57ceaae51a63ec1c16cb40561723db94c#npm:4.1.1"],
+            ["fs-extra", "npm:9.0.0"],
+            ["jest", "npm:25.5.4"],
+            ["ramda", "npm:0.27.0"],
+            ["sharp", "npm:0.25.2"],
+            ["sinon", "npm:9.0.2"]
           ],
           "linkType": "SOFT",
         }]
@@ -2919,37 +2950,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ejs", "npm:2.7.4"]
           ],
           "linkType": "HARD",
-        }]
-      ]],
-      ["eleventy-plugin-image", [
-        ["workspace:packages/eleventy-plugin-image", {
-          "packageLocation": "./packages/eleventy-plugin-image/",
-          "packageDependencies": [
-            ["eleventy-plugin-image", "workspace:packages/eleventy-plugin-image"],
-            ["debug", "virtual:3b5e69efaa2372701eeacd25836edffb24542c8451116315f985d26186b219fb4485f91e0a94a6978db5d292a078b1c57ceaae51a63ec1c16cb40561723db94c#npm:4.1.1"],
-            ["glob", "npm:7.1.6"],
-            ["jest", "npm:25.5.4"],
-            ["jsdom", "virtual:d6f12f46bae5290f0979501fcd99a54930677cba86988c28c34439252ae17b1b9157ddfbfc3c8b0ccb97717a1d1020413ee8b4c425aed89efca9a080ef225924#npm:16.2.2"],
-            ["ramda", "npm:0.27.0"],
-            ["sharp", "npm:0.25.2"],
-            ["sinon", "npm:9.0.2"]
-          ],
-          "linkType": "SOFT",
-        }]
-      ]],
-      ["eleventy-plugin-manifest", [
-        ["workspace:packages/eleventy-plugin-manifest", {
-          "packageLocation": "./packages/eleventy-plugin-manifest/",
-          "packageDependencies": [
-            ["eleventy-plugin-manifest", "workspace:packages/eleventy-plugin-manifest"],
-            ["debug", "virtual:3b5e69efaa2372701eeacd25836edffb24542c8451116315f985d26186b219fb4485f91e0a94a6978db5d292a078b1c57ceaae51a63ec1c16cb40561723db94c#npm:4.1.1"],
-            ["fs-extra", "npm:9.0.0"],
-            ["jest", "npm:25.5.4"],
-            ["ramda", "npm:0.27.0"],
-            ["sharp", "npm:0.25.2"],
-            ["sinon", "npm:9.0.2"]
-          ],
-          "linkType": "SOFT",
         }]
       ]],
       ["emitter-mixin", [
@@ -5222,10 +5222,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["virtual:d6f12f46bae5290f0979501fcd99a54930677cba86988c28c34439252ae17b1b9157ddfbfc3c8b0ccb97717a1d1020413ee8b4c425aed89efca9a080ef225924#npm:16.2.2", {
-          "packageLocation": "./.yarn/$$virtual/jsdom-virtual-e7bb7bdd12/0/cache/jsdom-npm-16.2.2-a08c488cbe-3.zip/node_modules/jsdom/",
+        ["virtual:fc1dd187b01b3b33655fb7244fe6608b70634cd9872d834bdd0732485d94ab2be8c4de529d1478fd5e6f1ce3a9f9b93b18295017fc6600d4a5b5790a92df7400#npm:16.2.2", {
+          "packageLocation": "./.yarn/$$virtual/jsdom-virtual-c06f3481b8/0/cache/jsdom-npm-16.2.2-a08c488cbe-3.zip/node_modules/jsdom/",
           "packageDependencies": [
-            ["jsdom", "virtual:d6f12f46bae5290f0979501fcd99a54930677cba86988c28c34439252ae17b1b9157ddfbfc3c8b0ccb97717a1d1020413ee8b4c425aed89efca9a080ef225924#npm:16.2.2"],
+            ["jsdom", "virtual:fc1dd187b01b3b33655fb7244fe6608b70634cd9872d834bdd0732485d94ab2be8c4de529d1478fd5e6f1ce3a9f9b93b18295017fc6600d4a5b5790a92df7400#npm:16.2.2"],
             ["abab", "npm:2.0.3"],
             ["acorn", "npm:7.1.1"],
             ["acorn-globals", "npm:6.0.0"],
