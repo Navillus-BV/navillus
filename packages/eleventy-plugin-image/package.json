@@ -1,6 +1,6 @@
 {
     "name": "@navillus/eleventy-plugin-image",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "main": ".eleventy.js",
     "license": "MIT",
     "publishConfig": {
@@ -21,13 +21,13 @@
     },
     "devDependencies": {
         "debug": "^4.1.1",
-        "jest": "^25.4.0",
+        "jest": "^26.1.0",
         "sinon": "^9.0.2"
     },
     "dependencies": {
         "glob": "^7.1.6",
         "jsdom": "^16.2.2",
         "ramda": "^0.27.0",
-        "sharp": "^0.25.2"
+        "sharp": "^0.25.4"
     }
 }

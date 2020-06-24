@@ -24,6 +24,9 @@ module.exports = function (config) {
       src: srcWithSize(reference.src, width),
       output: srcWithSize(reference.output, width),
       width,
+      height: Math.round(width * reference.height / reference.width),
+      fit: reference.fit,
+      position: reference.position
     })
 
     const sizesPipeline = pipe(getSizes, map(getSizeData))
