@@ -982,10 +982,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@navillus/eleventy-plugin-manifest", "workspace:packages/eleventy-plugin-manifest"],
             ["debug", "virtual:3b5e69efaa2372701eeacd25836edffb24542c8451116315f985d26186b219fb4485f91e0a94a6978db5d292a078b1c57ceaae51a63ec1c16cb40561723db94c#npm:4.1.1"],
-            ["fs-extra", "npm:9.0.0"],
+            ["fs-extra", "npm:9.0.1"],
             ["jest", "npm:25.5.4"],
             ["ramda", "npm:0.27.0"],
-            ["sharp", "npm:0.25.2"],
+            ["sharp", "npm:0.25.4"],
             ["sinon", "npm:9.0.2"]
           ],
           "linkType": "SOFT",
@@ -3883,10 +3883,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:9.0.0", {
-          "packageLocation": "./.yarn/cache/fs-extra-npm-9.0.0-646901d2a6-3.zip/node_modules/fs-extra/",
+        ["npm:9.0.1", {
+          "packageLocation": "./.yarn/cache/fs-extra-npm-9.0.1-2925889105-3.zip/node_modules/fs-extra/",
           "packageDependencies": [
-            ["fs-extra", "npm:9.0.0"],
+            ["fs-extra", "npm:9.0.1"],
             ["at-least-node", "npm:1.0.0"],
             ["graceful-fs", "npm:4.2.4"],
             ["jsonfile", "npm:6.0.1"],
@@ -6803,14 +6803,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["node-addon-api", [
-        ["npm:2.0.0", {
-          "packageLocation": "./.yarn/unplugged/node-addon-api-npm-2.0.0-0d40258cdb/node_modules/node-addon-api/",
-          "packageDependencies": [
-            ["node-addon-api", "npm:2.0.0"],
-            ["node-gyp", "npm:6.1.0"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:3.0.0", {
           "packageLocation": "./.yarn/unplugged/node-addon-api-npm-3.0.0-b51323d354/node_modules/node-addon-api/",
           "packageDependencies": [
@@ -7558,28 +7550,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["prebuild-install", [
-        ["npm:5.3.3", {
-          "packageLocation": "./.yarn/cache/prebuild-install-npm-5.3.3-db2bb47eb4-3.zip/node_modules/prebuild-install/",
-          "packageDependencies": [
-            ["prebuild-install", "npm:5.3.3"],
-            ["detect-libc", "npm:1.0.3"],
-            ["expand-template", "npm:2.0.3"],
-            ["github-from-package", "npm:0.0.0"],
-            ["minimist", "npm:1.2.5"],
-            ["mkdirp", "npm:0.5.5"],
-            ["napi-build-utils", "npm:1.0.2"],
-            ["node-abi", "npm:2.16.0"],
-            ["noop-logger", "npm:0.1.1"],
-            ["npmlog", "npm:4.1.2"],
-            ["pump", "npm:3.0.0"],
-            ["rc", "npm:1.2.8"],
-            ["simple-get", "npm:3.1.0"],
-            ["tar-fs", "npm:2.0.1"],
-            ["tunnel-agent", "npm:0.6.0"],
-            ["which-pm-runs", "npm:1.0.0"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:5.3.4", {
           "packageLocation": "./.yarn/cache/prebuild-install-npm-5.3.4-80bbe56393-3.zip/node_modules/prebuild-install/",
           "packageDependencies": [
@@ -8589,23 +8559,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["sharp", [
-        ["npm:0.25.2", {
-          "packageLocation": "./.yarn/unplugged/sharp-npm-0.25.2-f3ab1c1371/node_modules/sharp/",
-          "packageDependencies": [
-            ["sharp", "npm:0.25.2"],
-            ["color", "npm:3.1.2"],
-            ["detect-libc", "npm:1.0.3"],
-            ["node-addon-api", "npm:2.0.0"],
-            ["node-gyp", "npm:6.1.0"],
-            ["npmlog", "npm:4.1.2"],
-            ["prebuild-install", "npm:5.3.3"],
-            ["semver", "npm:7.3.2"],
-            ["simple-get", "npm:3.1.0"],
-            ["tar", "npm:6.0.2"],
-            ["tunnel-agent", "npm:0.6.0"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:0.25.4", {
           "packageLocation": "./.yarn/unplugged/sharp-npm-0.25.4-b4aada5bd9/node_modules/sharp/",
           "packageDependencies": [
