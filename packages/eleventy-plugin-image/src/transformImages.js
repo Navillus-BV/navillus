@@ -9,19 +9,26 @@ module.exports = function (config) {
   const prepareSizes = require('./prepareSizes')(config)
   const saveReferenceImage = require('./saveReferenceImage')(config)
   const saveSizes = require('./saveSizes')(config)
-  const updateImgElem = require('./updateImgElem')(config)
+  const prepareNewElement = require('./prepareNewElement')(config)
 
   function isHtml(outputPath) {
     return outputPath && path.extname(outputPath) === '.html'
   }
 
-  async function processImage(imgElem) {
-    return consumeOriginal({ imgElem })
-      .then(prepareReferenceImage)
-      .then(prepareSizes)
-      .then(saveReferenceImage)
-      .then(saveSizes)
-      .then(updateImgElem)
+  function processImage(document) {
+    return async function(imgElem) {
+      return consumeOriginal({ imgElem, document })
+        .then(prepareReferenceImage)
+        .then(prepareSizes)
+        .then(saveReferenceImage)
+        .then(saveSizes)
+        .then(prepareNewElement)
+        .then(replaceElement)
+    }
+  }
+
+  async function replaceElement({ imgElem, newElem }) {
+    imgElem.parentNode.replaceChild(newElem, imgElem)
   }
 
   return async function (rawContent, outputPath) {
@@ -37,19 +44,19 @@ module.exports = function (config) {
 
     debug(outputPath, `found ${images.length} supported images`)
 
-    await Promise.all(images.map(processImage))
+    const imageProcessor = processImage(dom.window.document)
+
+    await Promise.all(images.map(imageProcessor))
 
     dom.window.document.head.insertAdjacentHTML(
       'beforeend',
       `<style>
               .blur-up {
-                -webkit-filter: blur(10px);
-                filter: blur(10px);
-                transition: filter 400ms, -webkit-filter 400ms;
+                transition: opacity 400ms;
+                opacity: 0;
               }
               .blur-up.lazyloaded {
-                -webkit-filter: blur(0);
-                filter: blur(0);
+                opacity: 1;
               }
               img[data-sizes="auto"] {
                 display: block;
