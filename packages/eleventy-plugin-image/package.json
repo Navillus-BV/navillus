@@ -1,6 +1,6 @@
 {
     "name": "@navillus/eleventy-plugin-image",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "main": ".eleventy.js",
     "license": "MIT",
     "publishConfig": {
