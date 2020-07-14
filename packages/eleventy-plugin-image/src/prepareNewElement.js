@@ -19,7 +19,7 @@ module.exports = function (config) {
 
     newElem.innerHTML = `
       <div style="width: 100%; padding-bottom: ${100.0 / reference.aspectRatio}%;"></div>
-      <img src="${await getBase64(64)}" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center center;">
+      <img src="${await getBase64(64)}" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center center;" alt="${imgElem.alt}">
       <picture>
         <source srcset="${sizes.map(({ src, width }) => `${src} ${width}w`).join(', ')}">
         <img class="lazyload blur-up" src="${reference.src}" alt="${imgElem.alt}" title="${imgElem.alt}" loading="lazy" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center center;">
