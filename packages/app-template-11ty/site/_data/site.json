@@ -1,12 +1,12 @@
 {
-    "name": "Kamfly",
-    "url": "https://kamfly.io",
-    "description": "We help online businesses like you get more sales with your website so you can focus on your customers. Download our free SEO Checklist and make 5 easy tweaks to your website that will climb you up the Google rankings.",
-    "author": "Kamfly.io",
-    "email": "info@kamfly.io",
-    "images": {
-      "social": "https://www.kamfly.io/kamfly-share.png",
-      "favicon": "static/favicon.svg",
-      "logo": "/static/logo.svg"
-    }
+  "name": "Kamfly",
+  "url": "https://kamfly.io",
+  "description": "We help online businesses like you get more sales with your website so you can focus on your customers. Download our free SEO Checklist and make 5 easy tweaks to your website that will climb you up the Google rankings.",
+  "author": "Kamfly.io",
+  "email": "info@kamfly.io",
+  "images": {
+    "social": "https://www.kamfly.io/kamfly-share.png",
+    "favicon": "static/favicon.svg",
+    "logo": "/static/logo.svg"
   }
+}

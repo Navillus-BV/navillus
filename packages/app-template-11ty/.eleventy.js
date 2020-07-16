@@ -12,7 +12,7 @@ const build = require('./site/_data/build')
 const site = require('./site/_data/site.json')
 
 module.exports = function (eleventyConfig) {
-   /**
+  /**
    * Opts in to a full deep merge when combining the Data Cascade.
    *
    * @link https://www.11ty.dev/docs/data-deep-merge/#data-deep-merge
@@ -84,7 +84,7 @@ module.exports = function (eleventyConfig) {
   const md = markdownIt({
     html: true,
     breaks: true,
-    linkify: true
+    linkify: true,
   })
     .use(markdownItAnchor, {
       permalink: true,
@@ -92,7 +92,7 @@ module.exports = function (eleventyConfig) {
       permalinkBefore: false,
       permalinkClass: 'direct-link',
       permalinkSymbol: '',
-      level: [1, 2, 3, 4]
+      level: [1, 2, 3, 4],
     })
     .use(markdownItToc, {
       includeLevel: [2, 3],
@@ -103,7 +103,7 @@ module.exports = function (eleventyConfig) {
       transformLink: function (link) {
         // remove backticks from markdown code
         return link.replace(/\%60/g, '')
-      }
+      },
     })
 
   eleventyConfig.setLibrary('md', md)
@@ -120,7 +120,7 @@ module.exports = function (eleventyConfig) {
       input: 'site',
       includes: '_includes',
       output: '_output',
-      data: '_data'
-    }
+      data: '_data',
+    },
   }
 }
