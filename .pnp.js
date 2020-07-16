@@ -2303,8 +2303,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eleventy-plugin-seo", "npm:0.5.0"],
             ["eleventy-plugin-svg-contents", "npm:0.7.0"],
             ["luxon", "npm:1.24.1"],
+            ["markdown-it", "npm:11.0.0"],
+            ["markdown-it-anchor", "virtual:3846833b5f4a4d8017a265b853d2dfb4a5b88af6c34ae6c5a9b52232d3a5654be369fb4bbf92ace90185d1191b3ee722f3ffc13c4bd9556c31fa60aa5776b933#npm:5.3.0"],
+            ["markdown-it-table-of-contents", "npm:0.4.4"],
             ["prettier", "npm:2.0.5"],
             ["rimraf", "npm:3.0.2"],
+            ["slugify", "npm:1.4.4"],
             ["snowpack", "npm:2.6.4"]
           ],
           "linkType": "SOFT",
@@ -9840,6 +9844,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["uc.micro", "npm:1.0.6"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:3.0.2", {
+          "packageLocation": "./.yarn/cache/linkify-it-npm-3.0.2-55fc9f4a37-3.zip/node_modules/linkify-it/",
+          "packageDependencies": [
+            ["linkify-it", "npm:3.0.2"],
+            ["uc.micro", "npm:1.0.6"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["liquidjs", [
@@ -10100,6 +10112,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["markdown-it", [
+        ["npm:11.0.0", {
+          "packageLocation": "./.yarn/cache/markdown-it-npm-11.0.0-e4e0da3378-3.zip/node_modules/markdown-it/",
+          "packageDependencies": [
+            ["markdown-it", "npm:11.0.0"],
+            ["argparse", "npm:1.0.10"],
+            ["entities", "npm:2.0.3"],
+            ["linkify-it", "npm:3.0.2"],
+            ["mdurl", "npm:1.0.1"],
+            ["uc.micro", "npm:1.0.6"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:8.4.2", {
           "packageLocation": "./.yarn/cache/markdown-it-npm-8.4.2-55847d41d0-3.zip/node_modules/markdown-it/",
           "packageDependencies": [
@@ -10109,6 +10133,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["linkify-it", "npm:2.2.0"],
             ["mdurl", "npm:1.0.1"],
             ["uc.micro", "npm:1.0.6"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["markdown-it-anchor", [
+        ["virtual:3846833b5f4a4d8017a265b853d2dfb4a5b88af6c34ae6c5a9b52232d3a5654be369fb4bbf92ace90185d1191b3ee722f3ffc13c4bd9556c31fa60aa5776b933#npm:5.3.0", {
+          "packageLocation": "./.yarn/$$virtual/markdown-it-anchor-virtual-aabe646b15/0/cache/markdown-it-anchor-npm-5.3.0-af3ecceae7-3.zip/node_modules/markdown-it-anchor/",
+          "packageDependencies": [
+            ["markdown-it-anchor", "virtual:3846833b5f4a4d8017a265b853d2dfb4a5b88af6c34ae6c5a9b52232d3a5654be369fb4bbf92ace90185d1191b3ee722f3ffc13c4bd9556c31fa60aa5776b933#npm:5.3.0"],
+            ["markdown-it", "npm:11.0.0"]
+          ],
+          "packagePeers": [
+            "markdown-it"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["markdown-it-table-of-contents", [
+        ["npm:0.4.4", {
+          "packageLocation": "./.yarn/cache/markdown-it-table-of-contents-npm-0.4.4-856f07cc1f-3.zip/node_modules/markdown-it-table-of-contents/",
+          "packageDependencies": [
+            ["markdown-it-table-of-contents", "npm:0.4.4"]
           ],
           "linkType": "HARD",
         }]
@@ -13818,6 +13864,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/slugify-npm-1.4.0-154f0ed2aa-3.zip/node_modules/slugify/",
           "packageDependencies": [
             ["slugify", "npm:1.4.0"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:1.4.4", {
+          "packageLocation": "./.yarn/cache/slugify-npm-1.4.4-c25cdf8398-3.zip/node_modules/slugify/",
+          "packageDependencies": [
+            ["slugify", "npm:1.4.4"]
           ],
           "linkType": "HARD",
         }]

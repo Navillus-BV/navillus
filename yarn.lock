@@ -1949,8 +1949,12 @@ __metadata:
     eleventy-plugin-seo: ^0.5.0
     eleventy-plugin-svg-contents: ^0.7.0
     luxon: ^1.24.1
+    markdown-it: ^11.0.0
+    markdown-it-anchor: ^5.3.0
+    markdown-it-table-of-contents: ^0.4.4
     prettier: ^2.0.5
     rimraf: ^3.0.2
+    slugify: ^1.4.4
     snowpack: ^2.6.4
   languageName: unknown
   linkType: soft
@@ -5437,7 +5441,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"entities@npm:^2.0.0":
+"entities@npm:^2.0.0, entities@npm:~2.0.0":
   version: 2.0.3
   resolution: "entities@npm:2.0.3"
   checksum: 3/02dfe1fbf531dd667420ff4e963ddc049203471ba8ad2873655303aff4cf65f27823effb397521af4d58b5609d33fc0492b0cc073c8374f3bbe6d3b5bcec1a42
@@ -8859,6 +8863,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"linkify-it@npm:^3.0.1":
+  version: 3.0.2
+  resolution: "linkify-it@npm:3.0.2"
+  dependencies:
+    uc.micro: ^1.0.1
+  checksum: 3/bbc23f16d52d25b374971c681af1e3bb20af7ef59c243b4329c6bff5f06780784553150d4c14a16d45c9fecfc1478a7a6b79502b2c6b81d2e817f0da259046b2
+  languageName: node
+  linkType: hard
+
 "liquidjs@npm:^6.4.3":
   version: 6.4.3
   resolution: "liquidjs@npm:6.4.3"
@@ -9085,6 +9098,37 @@ fsevents@^1.2.7:
   dependencies:
     object-visit: ^1.0.0
   checksum: 3/9e85e6d802183927229d9ad04d70a0e0c7225451994605674d3ed4e4a21f817b4d9aba42a775e98078ffe47cf67df44a50eb07f965f14afead5015c8692503bd
+  languageName: node
+  linkType: hard
+
+"markdown-it-anchor@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "markdown-it-anchor@npm:5.3.0"
+  peerDependencies:
+    markdown-it: "*"
+  checksum: 3/505fbaa1252e47596a98b44220d8b24092df010d294d9bc309e6e9b1a67840cbe3661c6004d2db813b4cd6d6cd3abdf9eb70d45401a8972f0177bddf29fc32cf
+  languageName: node
+  linkType: hard
+
+"markdown-it-table-of-contents@npm:^0.4.4":
+  version: 0.4.4
+  resolution: "markdown-it-table-of-contents@npm:0.4.4"
+  checksum: 3/ef7921b845a20a4a31a36e509ebecfb7f0b8e6c4434596eacb4af348543a8a9e9c86c7ff1cda2c93a1d4e5e04686aa17dd2ddff3d5b736a0af3dee850f51830d
+  languageName: node
+  linkType: hard
+
+"markdown-it@npm:^11.0.0":
+  version: 11.0.0
+  resolution: "markdown-it@npm:11.0.0"
+  dependencies:
+    argparse: ^1.0.7
+    entities: ~2.0.0
+    linkify-it: ^3.0.1
+    mdurl: ^1.0.1
+    uc.micro: ^1.0.5
+  bin:
+    markdown-it: bin/markdown-it.js
+  checksum: 3/1fb3b47b11a801f2bd7d83e63cb11605fc44e60a25a901c8a445b55c445a0b48553930e2a7ea40fad4e5dcf48af1167b9b65813f489702cca1f8561c3000f85f
   languageName: node
   linkType: hard
 
@@ -12495,6 +12539,13 @@ resolve@1.1.7:
   version: 1.4.0
   resolution: "slugify@npm:1.4.0"
   checksum: 3/3306ca174ce13d30db8807b5a274f213a6b424b65619e0b89b49ef09cff38b4f2e63d8f55727f467f0736adf4ecc4b7c9edbb1436f7c82baff4b6ebd1da2d3f9
+  languageName: node
+  linkType: hard
+
+"slugify@npm:^1.4.4":
+  version: 1.4.4
+  resolution: "slugify@npm:1.4.4"
+  checksum: 3/707c9d4743094dcf4502658073d6f8222bbec56f13737626a4b8b870449209737144f5bcb535cbc2849f70a900a347bcd07608be7b315201682d82ee23a7a61b
   languageName: node
   linkType: hard
 

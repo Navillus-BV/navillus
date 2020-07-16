@@ -3,6 +3,10 @@ const manifestPlugin = require('@navillus/eleventy-plugin-manifest')
 const seoPlugin = require('eleventy-plugin-seo')
 const svgContentsPlugin = require('eleventy-plugin-svg-contents')
 const { DateTime } = require('luxon')
+const markdownIt = require('markdown-it')
+const markdownItAnchor = require('markdown-it-anchor')
+const markdownItToc = require('markdown-it-table-of-contents')
+const slugify = require('slugify')
 
 const build = require('./site/_data/build')
 const site = require('./site/_data/site.json')
@@ -61,6 +65,48 @@ module.exports = function (eleventyConfig) {
     short_name: site.name,
     icon: site.images.favicon,
   })
+
+  /**
+   * Override default markdown library
+   */
+  function removeExtraText(s) {
+    let newStr = String(s).replace(/New\ in\ v\d+\.\d+\.\d+/, '')
+    newStr = newStr.replace(/⚠️/g, '')
+    newStr = newStr.replace(/[?!]/g, '')
+    newStr = newStr.replace(/<[^>]*>/g, '')
+    return newStr
+  }
+
+  function markdownItSlugify(s) {
+    return slugify(removeExtraText(s), { lower: true, remove: /[:’'`,]/g })
+  }
+
+  const md = markdownIt({
+    html: true,
+    breaks: true,
+    linkify: true
+  })
+    .use(markdownItAnchor, {
+      permalink: true,
+      slugify: markdownItSlugify,
+      permalinkBefore: false,
+      permalinkClass: 'direct-link',
+      permalinkSymbol: '',
+      level: [1, 2, 3, 4]
+    })
+    .use(markdownItToc, {
+      includeLevel: [2, 3],
+      slugify: markdownItSlugify,
+      format: function (header) {
+        return removeExtraText(header)
+      },
+      transformLink: function (link) {
+        // remove backticks from markdown code
+        return link.replace(/\%60/g, '')
+      }
+    })
+
+  eleventyConfig.setLibrary('md', md)
 
   return {
     templateFormats: ['md', 'njk', 'html', '11ty.js'],
