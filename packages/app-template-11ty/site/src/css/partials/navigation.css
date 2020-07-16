@@ -1,0 +1,35 @@
+.navigation,
+.navigation__list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navigation__link {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--color-light-100);
+  padding: 1rem 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .navigation,
+  .navigation__list {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .navigation__link {
+    font-size: 1.25rem;
+    padding: 0.25rem 0;
+    margin: 0.75rem 1.5rem;
+    text-align: start;
+  }
+
+  .navigation__link--active {
+    border-bottom: 1px;
+  }
+}

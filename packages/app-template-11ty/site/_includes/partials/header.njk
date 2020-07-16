@@ -1,0 +1,31 @@
+<header class='header' x-data='mobileMenu()'>
+  <div class='header__container'>
+    <a href='{{ "/" | url }}' alt='{{ site.name }}' class='header__brand'>
+      {{ site.images.logo | svgContents('header__logo') | safe }}
+    </a>
+
+    <div class='header__navigation'>
+      {% include 'partials/navigation.njk' %}
+    </div>
+
+    <button aria-label='Open Menu' class='hamburger hamburger--squeeze header__hamburger' type='button' :class="{ 'is-active': isOpen() }" @click='toggle'>
+      <span class='hamburger-box'>
+        <span class='hamburger-inner'></span>
+      </span>
+    </button>
+
+    <a class='btn btn--primary header__cta' href='{{ "/power/" | url }}'>
+      BOOK A POWER HOUR
+    </a>
+  </div>
+
+  <aside class='header__sidenav' :class="{ 'header__sidenav--open': isOpen() }">
+    <div class='header__navigation header__navigation--mobile'>
+      {% include 'partials/navigation.njk' %}
+    </div>
+
+    <a class='btn btn--primary header__cta header__cta--mobile' href='{{ "/power" | url }}'>
+      BOOK A POWER HOUR
+    </a>
+  </aside>
+</header>
