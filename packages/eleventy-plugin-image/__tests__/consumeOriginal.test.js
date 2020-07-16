@@ -2,8 +2,8 @@ const consumeOriginal = require('../src/consumeOriginal')
 
 jest.mock('fs', () => ({
   stat: () => ({
-    size: 9000
-  })
+    size: 9000,
+  }),
 }))
 
 jest.mock('sharp', () => () => ({

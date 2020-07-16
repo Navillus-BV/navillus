@@ -2,4 +2,6 @@ node_modules
 .vscode
 package.json
 dist
-packages/site-template/lambda
+packages/app-template-11ty/_output
+packages/app-template-11ty/build
+packages/eleventy-demo

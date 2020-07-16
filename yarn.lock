@@ -834,6 +834,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@navillus/app-template-11ty@workspace:packages/app-template-11ty":
+  version: 0.0.0-use.local
+  resolution: "@navillus/app-template-11ty@workspace:packages/app-template-11ty"
+  dependencies:
+    "@11ty/eleventy": ^0.10.0
+    canvas-confetti: ^1.2.0
+    prettier: ^2.0.5
+    snowpack: ^2.6.4
+  languageName: unknown
+  linkType: soft
+
 "@navillus/eleventy-demo@workspace:packages/eleventy-demo":
   version: 0.0.0-use.local
   resolution: "@navillus/eleventy-demo@workspace:packages/eleventy-demo"
@@ -1528,17 +1539,6 @@ __metadata:
   checksum: 3/cf61bbaf7f34d9f94dd966230b7a7f8f1f24e3e2185540741a2561118e108206d85101ee2fc9876cd756475dbe6573d84d91115c3abdbf53a64e26a5f1f06b67
   languageName: node
   linkType: hard
-
-"app-template-11ty-04b6ae@workspace:packages/app-template-11ty":
-  version: 0.0.0-use.local
-  resolution: "app-template-11ty-04b6ae@workspace:packages/app-template-11ty"
-  dependencies:
-    "@11ty/eleventy": ^0.10.0
-    canvas-confetti: ^1.2.0
-    prettier: ^2.0.5
-    snowpack: ^2.6.4
-  languageName: unknown
-  linkType: soft
 
 "aproba@npm:^1.0.3":
   version: 1.2.0

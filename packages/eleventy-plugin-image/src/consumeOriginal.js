@@ -18,10 +18,19 @@ module.exports = function (config) {
     const { imgElem } = data
     const inputSrc = toInputPath(imgElem.src)
 
-    const [ metadata, size ] = await Promise.all([sharp(inputSrc).metadata(), getFileSize(inputSrc)])
+    const [metadata, size] = await Promise.all([
+      sharp(inputSrc).metadata(),
+      getFileSize(inputSrc),
+    ])
     const { height, width } = metadata
 
-    debug('consumeOriginal: %s, %d x %d (H x W), %d kB', imgElem.src, height, width, size)
+    debug(
+      'consumeOriginal: %s, %d x %d (H x W), %d kB',
+      imgElem.src,
+      height,
+      width,
+      size
+    )
 
     return {
       original: {

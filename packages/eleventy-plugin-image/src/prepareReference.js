@@ -48,7 +48,12 @@ module.exports = function (config) {
 
     reference.output = path.join(config.output, reference.src)
 
-    debug('prepareReference: %s -> %s, inline: %o', imgElem.src, reference.output, reference.inline)
+    debug(
+      'prepareReference: %s -> %s, inline: %o',
+      imgElem.src,
+      reference.output,
+      reference.inline
+    )
 
     return {
       ...data,

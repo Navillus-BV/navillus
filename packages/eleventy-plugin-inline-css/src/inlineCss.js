@@ -1,7 +1,7 @@
 const { JSDOM } = require('jsdom')
 const path = require('path')
 
-module.exports = function(config) {
+module.exports = function (config) {
   const getStyleLinks = require('./getStyleLinks')(config)
   const getLocalPath = require('./getLocalPath')(config)
   const localPathExists = require('./localPathExists')(config)
@@ -13,7 +13,7 @@ module.exports = function(config) {
     return outputPath && path.extname(outputPath) === '.html'
   }
 
-  return async function(rawContent, outputPath) {
+  return async function (rawContent, outputPath) {
     if (!isHtml(outputPath)) {
       return rawContent
     }
@@ -27,9 +27,7 @@ module.exports = function(config) {
         .map(getStylesheet(rawContent))
     )
 
-    styles
-      .map(minifyStyle)
-      .map(replaceElem)
+    styles.map(minifyStyle).map(replaceElem)
 
     return dom.serialize()
   }

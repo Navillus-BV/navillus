@@ -1,5 +1,4 @@
-WARNING:  This is still experimental!  We are using it internally, but haven't completed the test suite yet and the API surface may change.  Use at your own risk!
-
+WARNING: This is still experimental! We are using it internally, but haven't completed the test suite yet and the API surface may change. Use at your own risk!
 
 # @navillus/eleventy-plugin-image
 

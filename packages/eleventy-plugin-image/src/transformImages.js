@@ -16,7 +16,7 @@ module.exports = function (config) {
   }
 
   function processImage(document) {
-    return async function(imgElem) {
+    return async function (imgElem) {
       return consumeOriginal({ imgElem, document })
         .then(prepareReferenceImage)
         .then(prepareSizes)

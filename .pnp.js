@@ -23,7 +23,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:."
       },
       {
-        "name": "app-template-11ty-04b6ae",
+        "name": "@navillus/app-template-11ty",
         "reference": "workspace:packages/app-template-11ty"
       },
       {
@@ -46,11 +46,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.vscode\\/pnpify(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
+      ["@navillus/app-template-11ty", ["workspace:packages/app-template-11ty"]],
       ["@navillus/eleventy-demo", ["workspace:packages/eleventy-demo"]],
       ["@navillus/eleventy-plugin-image", ["workspace:packages/eleventy-plugin-image"]],
       ["@navillus/eleventy-plugin-inline-css", ["workspace:packages/eleventy-plugin-inline-css"]],
       ["@navillus/eleventy-plugin-manifest", ["workspace:packages/eleventy-plugin-manifest"]],
-      ["app-template-11ty-04b6ae", ["workspace:packages/app-template-11ty"]],
       ["navillus", ["workspace:."]]
     ],
     "fallbackPool": [
@@ -957,6 +957,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@navillus/app-template-11ty", [
+        ["workspace:packages/app-template-11ty", {
+          "packageLocation": "./packages/app-template-11ty/",
+          "packageDependencies": [
+            ["@navillus/app-template-11ty", "workspace:packages/app-template-11ty"],
+            ["@11ty/eleventy", "npm:0.10.0"],
+            ["canvas-confetti", "npm:1.2.0"],
+            ["prettier", "npm:2.0.5"],
+            ["snowpack", "npm:2.6.4"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
       ["@navillus/eleventy-demo", [
         ["workspace:packages/eleventy-demo", {
           "packageLocation": "./packages/eleventy-demo/",
@@ -1739,19 +1752,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["picomatch", "npm:2.2.2"]
           ],
           "linkType": "HARD",
-        }]
-      ]],
-      ["app-template-11ty-04b6ae", [
-        ["workspace:packages/app-template-11ty", {
-          "packageLocation": "./packages/app-template-11ty/",
-          "packageDependencies": [
-            ["app-template-11ty-04b6ae", "workspace:packages/app-template-11ty"],
-            ["@11ty/eleventy", "npm:0.10.0"],
-            ["canvas-confetti", "npm:1.2.0"],
-            ["prettier", "npm:2.0.5"],
-            ["snowpack", "npm:2.6.4"]
-          ],
-          "linkType": "SOFT",
         }]
       ]],
       ["aproba", [

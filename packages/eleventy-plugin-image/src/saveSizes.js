@@ -11,7 +11,7 @@ module.exports = function (config) {
         width,
         height,
         fit,
-        position
+        position,
       })
       .toFile(output)
   }
@@ -21,8 +21,8 @@ module.exports = function (config) {
 
     debug('saveSizes: %s saving %o', imgElem.src, sizes)
 
-    return Promise.all(sizes.map((size) => saveSize({ original, reference, size }))).then(
-      () => data
-    )
+    return Promise.all(
+      sizes.map((size) => saveSize({ original, reference, size }))
+    ).then(() => data)
   }
 }

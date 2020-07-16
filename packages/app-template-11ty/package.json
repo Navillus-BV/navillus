@@ -1,10 +1,19 @@
 {
+  "name": "@navillus/app-template-11ty",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "csa-template"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
     "test": "echo \"This template does not include a test runner by default.\" && exit 1",
-    "format": "prettier --write \"src/**/*.js\"",
-    "lint": "prettier --check \"src/**/*.js\""
+    "format": "prettier --write .",
+    "lint": "prettier --check ."
   },
   "dependencies": {
     "canvas-confetti": "^1.2.0"
