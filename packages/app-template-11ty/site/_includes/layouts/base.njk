@@ -33,6 +33,10 @@
 
     {% include "partials/footer.njk" %}
     
+    {% if build.prod %}
+    <script defer src="/_dist_/index.js"></script>
+    {% else %}
     <script type="module" src="/_dist_/index.js"></script>
+    {% endif %}
   </body>
 </html>
