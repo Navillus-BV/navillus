@@ -13,7 +13,7 @@ window.mobileMenu = function () {
       this.show = !this.show
     },
     isOpen() {
-      return show
+      return this.show
     },
   }
 }
